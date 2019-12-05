@@ -12,11 +12,7 @@ import Events from "./Events";
  */
 class Conversations {
   static get PATH() {
-    return "/beta/conversations";
-  }
-
-  static get BETA2_PATH() {
-    return "/beta2/conversations";
+    return "/v0.1/conversations";
   }
 
   static get V1_PATH() {
@@ -80,7 +76,7 @@ class Conversations {
       path:
         typeof query === "string"
           ? `${Conversations.PATH}/${query}`
-          : Utils.createPathWithQuery(Conversations.BETA2_PATH, query),
+          : Utils.createPathWithQuery(Conversations.PATH, query),
       method: "GET",
       body: undefined,
       headers: {

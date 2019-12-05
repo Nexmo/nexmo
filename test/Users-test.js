@@ -53,7 +53,7 @@ describe("Users", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Users.BETA2_PATH}`
+      path: `${Users.PATH}`
     });
 
     expect(httpClientStub.request).to.have.been.calledWith(
@@ -68,7 +68,7 @@ describe("Users", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Users.BETA2_PATH}?some=query`
+      path: `${Users.PATH}?some=query`
     });
 
     expect(httpClientStub.request).to.have.been.calledWith(
@@ -93,7 +93,7 @@ describe("Users", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Users.BETA2_PATH}?some=query`
+      path: `${Users.PATH}?some=query`
     });
 
     expect(httpClientStub.request).to.have.been.calledWith(
@@ -119,77 +119,7 @@ describe("Users", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Users.BETA2_PATH}/${userId}`
-    });
-
-    expect(httpClientStub.request).to.have.been.calledWith(
-      sinon.match(expectedRequestArgs),
-      emptyCallback
-    );
-  });
-
-  it("should get conversations for a user", () => {
-    const userId = "USR-aaabbbccc-111222333";
-    users.getConversations(userId, {}, emptyCallback);
-
-    var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
-      method: "GET",
-      body: undefined,
-      path: `${Users.BETA2_PATH}/${userId}/conversations`
-    });
-
-    expect(httpClientStub.request).to.have.been.calledWith(
-      sinon.match(expectedRequestArgs),
-      emptyCallback
-    );
-  });
-
-  it("should get conversations for a user without a query", () => {
-    const userId = "USR-aaabbbccc-111222333";
-    users.getConversations(userId, emptyCallback);
-
-    var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
-      method: "GET",
-      body: undefined,
-      path: `${Users.BETA2_PATH}/${userId}/conversations`
-    });
-
-    expect(httpClientStub.request).to.have.been.calledWith(
-      sinon.match(expectedRequestArgs),
-      emptyCallback
-    );
-  });
-
-  it("should get the next collection of conversations for a user", () => {
-    let userId = "USR-eeefffggg-444555666";
-    users.next(
-      { _links: { next: { href: `${userId}/?some=query` } } },
-      emptyCallback
-    );
-
-    var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
-      method: "GET",
-      body: undefined,
-      path: `${Users.BETA2_PATH}/${userId}/conversations?some=query`
-    });
-
-    expect(httpClientStub.request).to.have.been.calledWith(
-      sinon.match(expectedRequestArgs),
-      emptyCallback
-    );
-  });
-
-  it("should get the previous collection of conversations for a user", () => {
-    let userId = "USR-eeefffggg-444555666";
-    users.prev(
-      { _links: { prev: { href: `${userId}/?some=query` } } },
-      emptyCallback
-    );
-
-    var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
-      method: "GET",
-      body: undefined,
-      path: `${Users.BETA2_PATH}/${userId}/conversations?some=query`
+      path: `${Users.PATH}/${userId}`
     });
 
     expect(httpClientStub.request).to.have.been.calledWith(

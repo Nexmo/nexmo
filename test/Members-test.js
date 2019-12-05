@@ -63,10 +63,7 @@ describe("Members", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Members.BETA2_PATH.replace(
-        "{conversation_uuid}",
-        conversationId
-      )}`
+      path: `${Members.PATH.replace("{conversation_uuid}", conversationId)}`
     });
 
     expect(httpClientStub.request).to.have.been.calledWith(
@@ -85,7 +82,7 @@ describe("Members", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Members.BETA2_PATH.replace(
+      path: `${Members.PATH.replace(
         "{conversation_uuid}",
         conversationId
       )}?some=query`
@@ -117,7 +114,7 @@ describe("Members", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Members.BETA2_PATH.replace(
+      path: `${Members.PATH.replace(
         "{conversation_uuid}",
         conversationId
       )}?some=query`
@@ -147,7 +144,7 @@ describe("Members", () => {
     var expectedRequestArgs = ResourceTestHelper.requestArgsMatch(null, {
       method: "GET",
       body: undefined,
-      path: `${Members.BETA2_PATH.replace(
+      path: `${Members.PATH.replace(
         "{conversation_uuid}",
         conversationId
       )}/${memberId}`

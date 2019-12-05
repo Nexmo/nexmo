@@ -10,11 +10,7 @@ class Events {
    * The path to the `events` resource.
    */
   static get PATH() {
-    return "/beta/conversations/{conversation_uuid}/events";
-  }
-
-  static get BETA2_PATH() {
-    return "/beta2/conversations/{conversation_uuid}/events";
+    return "/v0.1/conversations/{conversation_uuid}/events";
   }
 
   /**
@@ -65,7 +61,7 @@ class Events {
     var config = {
       host: this.options.host || "api.nexmo.com",
       path: Utils.createPathWithQuery(
-        Events.BETA2_PATH.replace("{conversation_uuid}", conversationId),
+        Events.PATH.replace("{conversation_uuid}", conversationId),
         query
       ),
       method: "GET",

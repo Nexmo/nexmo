@@ -599,26 +599,6 @@ nexmo.users.prev(response, callback);
 
 For more information see https://developer.nexmo.com/api/conversation#getUsers
 
-### Get paginated Conversations for a User
-
-```js
-nexmo.users.getConversations(userId, options, callback);
-```
-
-### Get next page of Conversations for a User
-
-```js
-nexmo.users.next(response, callback);
-```
-
-### Get previous page of Conversations for a User
-
-```js
-nexmo.users.prev(response, callback);
-```
-
-For more information see https://developer.nexmo.com/api/conversation#getuserConversations
-
 ### Update a User
 
 ```js

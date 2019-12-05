@@ -10,11 +10,7 @@ class Members {
    * The path to the `members` resource.
    */
   static get PATH() {
-    return "/beta/conversations/{conversation_uuid}/members";
-  }
-
-  static get BETA2_PATH() {
-    return "/beta2/conversations/{conversation_uuid}/members";
+    return "/v0.1/conversations/{conversation_uuid}/members";
   }
 
   /**
@@ -69,7 +65,7 @@ class Members {
     var config = {
       host: this.options.host || "api.nexmo.com",
       path: Utils.createPathWithQuery(
-        Members.BETA2_PATH.replace("{conversation_uuid}", conversationId),
+        Members.PATH.replace("{conversation_uuid}", conversationId),
         query
       ),
       method: "GET",

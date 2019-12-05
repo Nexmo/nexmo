@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.7.0-beta-1
+- Added support for Conversation API v0.1
+- Removed `nexmo.users.getConversations`
+
 ## 2.6.0-beta-1
 - Added beta2 API version for `get()` methods in `nexmo.users`, `nexmo.users.getConversations`, `nexmo.conversations`, `nexmo.conversations.members` and `nexmo.conversations.events`
 - Added cursor pagination methods `next()` and `prev()` for `nexmo.users`, `nexmo.conversations`, `nexmo.conversations.members` and `nexmo.conversations.events`
