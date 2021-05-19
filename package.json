@@ -54,7 +54,7 @@
     "babel-plugin-istanbul": "^6.0.0",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
-    "chai": "^3.5.0",
+    "chai": "^4.3.4",
     "cross-env": "^7.0.2",
     "dotenv": "^9.0.2",
     "eslint": "^7.21.0",
